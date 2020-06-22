@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:53448/Service.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:53448/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:53448/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService_GetAllCarServices_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCarServices" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetAllCarServices_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCarServicesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_InsertCarService_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCarService" />
+  </wsdl:message>
+  <wsdl:message name="IService_InsertCarService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCarServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_DeleteCarService_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCarService" />
+  </wsdl:message>
+  <wsdl:message name="IService_DeleteCarService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCarServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetAllCars_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCars" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetAllCars_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCarsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_InsertCar_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCar" />
+  </wsdl:message>
+  <wsdl:message name="IService_InsertCar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_DeleteCar_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCar" />
+  </wsdl:message>
+  <wsdl:message name="IService_DeleteCar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetServiceData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceData" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetServiceData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_InsertService_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertService" />
+  </wsdl:message>
+  <wsdl:message name="IService_InsertService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_DeleteService_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteService" />
+  </wsdl:message>
+  <wsdl:message name="IService_DeleteService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteServiceResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService">
+    <wsdl:operation name="GetAllCarServices">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetAllCarServices" message="tns:IService_GetAllCarServices_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetAllCarServicesResponse" message="tns:IService_GetAllCarServices_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCarService">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/InsertCarService" message="tns:IService_InsertCarService_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/InsertCarServiceResponse" message="tns:IService_InsertCarService_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCarService">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/DeleteCarService" message="tns:IService_DeleteCarService_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/DeleteCarServiceResponse" message="tns:IService_DeleteCarService_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCars">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetAllCars" message="tns:IService_GetAllCars_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetAllCarsResponse" message="tns:IService_GetAllCars_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/InsertCar" message="tns:IService_InsertCar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/InsertCarResponse" message="tns:IService_InsertCar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/DeleteCar" message="tns:IService_DeleteCar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/DeleteCarResponse" message="tns:IService_DeleteCar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetServiceData" message="tns:IService_GetServiceData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetServiceDataResponse" message="tns:IService_GetServiceData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertService">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/InsertService" message="tns:IService_InsertService_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/InsertServiceResponse" message="tns:IService_InsertService_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteService">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/DeleteService" message="tns:IService_DeleteService_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/DeleteServiceResponse" message="tns:IService_DeleteService_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllCarServices">
+      <soap:operation soapAction="http://tempuri.org/IService/GetAllCarServices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCarService">
+      <soap:operation soapAction="http://tempuri.org/IService/InsertCarService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCarService">
+      <soap:operation soapAction="http://tempuri.org/IService/DeleteCarService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCars">
+      <soap:operation soapAction="http://tempuri.org/IService/GetAllCars" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCar">
+      <soap:operation soapAction="http://tempuri.org/IService/InsertCar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCar">
+      <soap:operation soapAction="http://tempuri.org/IService/DeleteCar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceData">
+      <soap:operation soapAction="http://tempuri.org/IService/GetServiceData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertService">
+      <soap:operation soapAction="http://tempuri.org/IService/InsertService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteService">
+      <soap:operation soapAction="http://tempuri.org/IService/DeleteService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="BasicHttpBinding_IService" binding="tns:BasicHttpBinding_IService">
+      <soap:address location="http://localhost:53448/Service.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

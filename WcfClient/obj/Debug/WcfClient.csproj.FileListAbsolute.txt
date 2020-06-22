@@ -1,0 +1,11 @@
+C:\Users\Admin\Desktop\Работа\ТЗ\WcfClient\bin\Debug\WcfClient.exe.config
+C:\Users\Admin\Desktop\Работа\ТЗ\WcfClient\bin\Debug\WcfClient.exe
+C:\Users\Admin\Desktop\Работа\ТЗ\WcfClient\bin\Debug\WcfClient.pdb
+C:\Users\Admin\Desktop\Работа\ТЗ\WcfClient\obj\Debug\WcfClient.Properties.Resources.resources
+C:\Users\Admin\Desktop\Работа\ТЗ\WcfClient\obj\Debug\WcfClient.csproj.GenerateResource.cache
+C:\Users\Admin\Desktop\Работа\ТЗ\WcfClient\obj\Debug\WcfClient.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Работа\ТЗ\WcfClient\obj\Debug\WcfClient.exe
+C:\Users\Admin\Desktop\Работа\ТЗ\WcfClient\obj\Debug\WcfClient.pdb
+C:\Users\Admin\Desktop\Работа\ТЗ\WcfClient\obj\Debug\WcfClient.MainForm.resources
+C:\Users\Admin\Desktop\Работа\ТЗ\WcfClient\obj\Debug\WcfClient.Forms.AddSTO.resources
+C:\Users\Admin\Desktop\Работа\ТЗ\WcfClient\obj\Debug\WcfClient.Forms.AddServiceToSTO.resources
