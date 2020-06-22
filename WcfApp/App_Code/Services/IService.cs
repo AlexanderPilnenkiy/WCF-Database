@@ -17,6 +17,9 @@ public interface IService
 	void InsertCarService(string Name, string Description);
 
 	[OperationContract]
+	void InsertServiceToCS(string CarService, string Service);
+
+	[OperationContract]
 	void DeleteCarService(string CarService);
 
 	[OperationContract]

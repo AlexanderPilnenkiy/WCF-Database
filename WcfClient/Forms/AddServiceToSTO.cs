@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WcfClient.FormController;
+using WcfClient.ServiceReference;
 
 namespace WcfClient.Forms
 {
@@ -15,6 +17,14 @@ namespace WcfClient.Forms
         public AddServiceToSTO()
         {
             InitializeComponent();
+            FlowComboBox flow = new FlowComboBox();
+            flow.cbCarServices(this);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ServiceClient service = new ServiceClient();
+            service.InsertServiceToCS(cbSTO.Text, cbServices.Text);
         }
     }
 }

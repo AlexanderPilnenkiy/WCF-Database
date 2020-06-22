@@ -26,6 +26,19 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="InsertServiceToCS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CarService" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Service" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertServiceToCSResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="DeleteCarService">
     <xs:complexType>
       <xs:sequence>

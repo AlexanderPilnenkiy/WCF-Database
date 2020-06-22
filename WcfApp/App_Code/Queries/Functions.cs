@@ -9,4 +9,9 @@ public class Functions
     {
         return "select * from add_car_service('" + Name + "', '" + Description + "')";
     }
+
+    public static string AddCsService(string CarService, string Service)
+    {
+        return "select * from add_cs_service('" + CarService + "', '" + Service + "')";
+    }
 }

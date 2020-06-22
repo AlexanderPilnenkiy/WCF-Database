@@ -19,6 +19,12 @@
   <wsdl:message name="IService_InsertCarService_OutputMessage">
     <wsdl:part name="parameters" element="tns:InsertCarServiceResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_InsertServiceToCS_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertServiceToCS" />
+  </wsdl:message>
+  <wsdl:message name="IService_InsertServiceToCS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertServiceToCSResponse" />
+  </wsdl:message>
   <wsdl:message name="IService_DeleteCarService_InputMessage">
     <wsdl:part name="parameters" element="tns:DeleteCarService" />
   </wsdl:message>
@@ -70,6 +76,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService/InsertCarService" message="tns:IService_InsertCarService_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/InsertCarServiceResponse" message="tns:IService_InsertCarService_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="InsertServiceToCS">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/InsertServiceToCS" message="tns:IService_InsertServiceToCS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/InsertServiceToCSResponse" message="tns:IService_InsertServiceToCS_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="DeleteCarService">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/DeleteCarService" message="tns:IService_DeleteCarService_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/DeleteCarServiceResponse" message="tns:IService_DeleteCarService_OutputMessage" />
@@ -112,6 +122,15 @@
     </wsdl:operation>
     <wsdl:operation name="InsertCarService">
       <soap:operation soapAction="http://tempuri.org/IService/InsertCarService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertServiceToCS">
+      <soap:operation soapAction="http://tempuri.org/IService/InsertServiceToCS" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

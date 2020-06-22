@@ -292,6 +292,12 @@ namespace WcfClient.ServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/InsertCarService", ReplyAction="http://tempuri.org/IService/InsertCarServiceResponse")]
         System.Threading.Tasks.Task InsertCarServiceAsync(string Name, string Description);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/InsertServiceToCS", ReplyAction="http://tempuri.org/IService/InsertServiceToCSResponse")]
+        void InsertServiceToCS(string CarService, string Service);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/InsertServiceToCS", ReplyAction="http://tempuri.org/IService/InsertServiceToCSResponse")]
+        System.Threading.Tasks.Task InsertServiceToCSAsync(string CarService, string Service);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/DeleteCarService", ReplyAction="http://tempuri.org/IService/DeleteCarServiceResponse")]
         void DeleteCarService(string CarService);
         
@@ -376,6 +382,14 @@ namespace WcfClient.ServiceReference {
         
         public System.Threading.Tasks.Task InsertCarServiceAsync(string Name, string Description) {
             return base.Channel.InsertCarServiceAsync(Name, Description);
+        }
+        
+        public void InsertServiceToCS(string CarService, string Service) {
+            base.Channel.InsertServiceToCS(CarService, Service);
+        }
+        
+        public System.Threading.Tasks.Task InsertServiceToCSAsync(string CarService, string Service) {
+            return base.Channel.InsertServiceToCSAsync(CarService, Service);
         }
         
         public void DeleteCarService(string CarService) {

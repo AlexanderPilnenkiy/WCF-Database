@@ -45,6 +45,14 @@ public class Service : IService
 		}
     }
 
+	public void InsertServiceToCS(string CarService, string Service)
+    {
+		using (var command = new NpgsqlCommand(Functions.AddCsService(CarService, Service), Connection))
+		{
+			command.ExecuteNonQuery();
+		}
+	}
+
 	public void DeleteCarService(string ServiceName)
 	{
 

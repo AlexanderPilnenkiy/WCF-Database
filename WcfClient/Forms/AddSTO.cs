@@ -30,8 +30,7 @@ namespace WcfClient.Forms
         private void button1_Click(object sender, EventArgs e)
         {
             ServiceClient service = new ServiceClient();
-            CarService carService = new CarService() { Name = Name.Text, Description = Description.Text };
-            service.InsertCarService(carService.Name, carService.Description);
+            service.InsertCarService(Name.Text, Description.Text);
             FlowList flowList = new FlowList();
             flowList.StoList(_mainForm);
             Close();
