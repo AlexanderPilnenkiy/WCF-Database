@@ -39,4 +39,9 @@ public class Functions
     {
         return "select * from get_cars_from_sto('" + Sto + "')";
     }
+
+    public static string GetCommonInfo(DateTime First, DateTime Second)
+    {
+        return "select * from get_common_info('" + First + "', '" + Second + "')";
+    }
 }

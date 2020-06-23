@@ -44,6 +44,20 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ServiceData" nillable="true" type="tns:ServiceData" />
+  <xs:complexType name="ArrayOfCommonInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CommonInformation" nillable="true" type="tns:CommonInformation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCommonInformation" nillable="true" type="tns:ArrayOfCommonInformation" />
+  <xs:complexType name="CommonInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CountOfServices" type="xs:int" />
+      <xs:element minOccurs="0" name="STO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SummaryPrice" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CommonInformation" nillable="true" type="tns:CommonInformation" />
   <xs:complexType name="ArrayOfCarsFromSto">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="CarsFromSto" nillable="true" type="tns:CarsFromSto" />

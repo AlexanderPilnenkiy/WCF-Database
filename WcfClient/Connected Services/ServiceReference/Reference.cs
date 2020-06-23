@@ -278,6 +278,83 @@ namespace WcfClient.ServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CommonInformation", Namespace="http://schemas.datacontract.org/2004/07/")]
+    [System.SerializableAttribute()]
+    public partial class CommonInformation : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CountOfServicesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string STOField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double SummaryPriceField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CountOfServices {
+            get {
+                return this.CountOfServicesField;
+            }
+            set {
+                if ((this.CountOfServicesField.Equals(value) != true)) {
+                    this.CountOfServicesField = value;
+                    this.RaisePropertyChanged("CountOfServices");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string STO {
+            get {
+                return this.STOField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.STOField, value) != true)) {
+                    this.STOField = value;
+                    this.RaisePropertyChanged("STO");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double SummaryPrice {
+            get {
+                return this.SummaryPriceField;
+            }
+            set {
+                if ((this.SummaryPriceField.Equals(value) != true)) {
+                    this.SummaryPriceField = value;
+                    this.RaisePropertyChanged("SummaryPrice");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="CarsFromSto", Namespace="http://schemas.datacontract.org/2004/07/")]
     [System.SerializableAttribute()]
     public partial class CarsFromSto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -421,6 +498,12 @@ namespace WcfClient.ServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetServiceData", ReplyAction="http://tempuri.org/IService/GetServiceDataResponse")]
         System.Threading.Tasks.Task<WcfClient.ServiceReference.ServiceData[]> GetServiceDataAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetCommonInfo", ReplyAction="http://tempuri.org/IService/GetCommonInfoResponse")]
+        WcfClient.ServiceReference.CommonInformation[] GetCommonInfo(System.DateTime First, System.DateTime Second);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetCommonInfo", ReplyAction="http://tempuri.org/IService/GetCommonInfoResponse")]
+        System.Threading.Tasks.Task<WcfClient.ServiceReference.CommonInformation[]> GetCommonInfoAsync(System.DateTime First, System.DateTime Second);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetCarsFromSto", ReplyAction="http://tempuri.org/IService/GetCarsFromStoResponse")]
         WcfClient.ServiceReference.CarsFromSto[] GetCarsFromSto(string Sto);
         
@@ -523,6 +606,14 @@ namespace WcfClient.ServiceReference {
         
         public System.Threading.Tasks.Task<WcfClient.ServiceReference.ServiceData[]> GetServiceDataAsync() {
             return base.Channel.GetServiceDataAsync();
+        }
+        
+        public WcfClient.ServiceReference.CommonInformation[] GetCommonInfo(System.DateTime First, System.DateTime Second) {
+            return base.Channel.GetCommonInfo(First, Second);
+        }
+        
+        public System.Threading.Tasks.Task<WcfClient.ServiceReference.CommonInformation[]> GetCommonInfoAsync(System.DateTime First, System.DateTime Second) {
+            return base.Channel.GetCommonInfoAsync(First, Second);
         }
         
         public WcfClient.ServiceReference.CarsFromSto[] GetCarsFromSto(string Sto) {

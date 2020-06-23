@@ -13,7 +13,7 @@ namespace WcfClient.FormController
     class Context
     {
         int TypeOfMenu, SelectedYear, SelectedId;
-        string SelectedService, SelectedAuto, SelectedDate;
+        string SelectedService, SelectedAuto, SelectedDate, SelectedSto;
 
         public void OnClick(MainForm form1, MouseEventArgs e)
         {
@@ -28,6 +28,7 @@ namespace WcfClient.FormController
                     {
                         case 0:
                             m.MenuItems.Add(new MenuItem("Информация об СТО", MenuItemNew_Click));
+                            SelectedSto = form1.ItemsList[2, form1.ItemsList.CurrentRow.Index].Value.ToString();
                             break;
                         case 1:
                             m.MenuItems.Add(new MenuItem("Привязать к СТО", MenuItemNew_Click));
@@ -54,6 +55,8 @@ namespace WcfClient.FormController
             switch (TypeOfMenu)
             {
                 case 0:
+                    AboutSTO aboutSTO = new AboutSTO(SelectedSto);
+                    aboutSTO.Show();
                     break;
                 case 1:
                     AddServiceToSTO addServiceToSTO = new AddServiceToSTO(SelectedService);

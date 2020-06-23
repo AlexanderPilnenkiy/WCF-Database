@@ -106,6 +106,21 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetCommonInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="First" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Second" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCommonInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetCommonInfoResult" nillable="true" type="q5:ArrayOfCommonInformation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetCarsFromSto">
     <xs:complexType>
       <xs:sequence>
@@ -116,7 +131,7 @@
   <xs:element name="GetCarsFromStoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetCarsFromStoResult" nillable="true" type="q5:ArrayOfCarsFromSto" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetCarsFromStoResult" nillable="true" type="q6:ArrayOfCarsFromSto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

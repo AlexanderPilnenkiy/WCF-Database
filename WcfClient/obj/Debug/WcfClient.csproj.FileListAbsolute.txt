@@ -24,3 +24,5 @@ C:\Users\Admin\Desktop\Работа\ТЗ\WCF-Database\WcfClient\obj\Debug\WcfCli
 C:\Users\Admin\Desktop\Работа\ТЗ\WCF-Database\WcfClient\obj\Debug\WcfClient.Forms.AddService.resources
 C:\Users\Admin\Desktop\Работа\ТЗ\WCF-Database\WcfClient\obj\Debug\WcfClient.Forms.AddCar.resources
 C:\Users\Admin\Desktop\Работа\ТЗ\WCF-Database\WcfClient\obj\Debug\WcfClient.Forms.AutoToSTO.resources
+C:\Users\Admin\Desktop\Работа\ТЗ\WCF-Database\WcfClient\obj\Debug\WcfClient.Forms.AboutSTO.resources
+C:\Users\Admin\Desktop\Работа\ТЗ\WCF-Database\WcfClient\obj\Debug\WcfClient.Forms.CommonInfo.resources

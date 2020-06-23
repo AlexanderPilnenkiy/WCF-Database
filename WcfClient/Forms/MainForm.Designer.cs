@@ -97,6 +97,7 @@
             this.статистикаПоСТОToolStripMenuItem.Name = "статистикаПоСТОToolStripMenuItem";
             this.статистикаПоСТОToolStripMenuItem.Size = new System.Drawing.Size(248, 26);
             this.статистикаПоСТОToolStripMenuItem.Text = "Статистика всех СТО";
+            this.статистикаПоСТОToolStripMenuItem.Click += new System.EventHandler(this.статистикаПоСТОToolStripMenuItem_Click);
             // 
             // eckeubToolStripMenuItem
             // 

@@ -70,5 +70,11 @@ namespace WcfClient
             AddCar addCar = new AddCar(this);
             addCar.Show();
         }
+
+        private void статистикаПоСТОToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CommonInfo commonInfo = new CommonInfo();
+            commonInfo.Show();
+        }
     }
 }

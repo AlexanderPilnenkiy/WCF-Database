@@ -35,6 +35,9 @@ public interface IService
 	List<ServiceData> GetServiceData();
 
 	[OperationContract]
+	List<CommonInformation> GetCommonInfo(DateTime First, DateTime Second);
+
+	[OperationContract]
 	List<CarsFromSto> GetCarsFromSto(string Sto);
 
 	[OperationContract]

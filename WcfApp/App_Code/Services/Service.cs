@@ -80,6 +80,24 @@ public class Service : IService
 		return car;
 	}
 
+	public List<CommonInformation> GetCommonInfo(DateTime First, DateTime Second)
+	{
+		var Command = new NpgsqlCommand(Functions.GetCommonInfo(First, Second), Connection);
+
+		NpgsqlDataReader Reader = Command.ExecuteReader();
+		List<CommonInformation> info = new List<CommonInformation>();
+		while (Reader.Read())
+		{
+			info.Add(new CommonInformation()
+			{
+				STO = Reader.GetString(0),
+				CountOfServices = Reader.GetInt32(1),
+				SummaryPrice = Reader.GetDouble(2)
+			});
+		}
+		return info;
+	}
+
 	public List<CarsFromSto> GetCarsFromSto(string Sto)
     {
 		var Command = new NpgsqlCommand(Functions.GetCarsFromSto(Sto), Connection);
