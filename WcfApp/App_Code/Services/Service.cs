@@ -15,7 +15,6 @@ public class Service : IService
     {
 		string ConnectionString = "Server = 127.0.0.1; User Id = car_user; Database = autoservice; Port = 5432; Password = cuser";
 		Connection = new NpgsqlConnection(ConnectionString);
-		Connection.Close();
 		Connection.Open();
 	}
 
@@ -35,30 +34,6 @@ public class Service : IService
 			});
 		}
 		return CServise;
-	}
-
-	public void InsertCarService(string Name, string Description)
-    {
-		using (var command = new NpgsqlCommand(Functions.AddCarService(Name, Description), Connection))
-		{
-			command.ExecuteNonQuery();
-		}
-    }
-
-	public void InsertCarToService(int CarId, string CarService, string Service)
-    {
-		using (var command = new NpgsqlCommand(Functions.AddCarToSto(CarId, CarService, Service), Connection))
-		{
-			command.ExecuteNonQuery();
-		}
-	}
-
-	public void InsertServiceToCS(string CarService, string Service)
-    {
-		using (var command = new NpgsqlCommand(Functions.AddCsService(CarService, Service), Connection))
-		{
-			command.ExecuteNonQuery();
-		}
 	}
 
 	public List<Car> GetAllCars()
@@ -117,15 +92,6 @@ public class Service : IService
 		return cars;
 	}
 
-
-	public void InsertCar(string Brand, int Year, DateTime Date)
-	{
-		using (var command = new NpgsqlCommand(Functions.AddCar(Brand, Year, Date), Connection))
-		{
-			command.ExecuteNonQuery();
-		}
-	}
-
 	public List<ServiceData> GetServiceData()
 	{
 		var Command = new NpgsqlCommand(Views.GetServicesList, Connection);
@@ -145,14 +111,6 @@ public class Service : IService
 		return services;
 	}
 
-	public void InsertService(string Name, string Description, double Price)
-	{
-		using (var command = new NpgsqlCommand(Functions.AddService(Name, Description, Price), Connection))
-		{
-			command.ExecuteNonQuery();
-		}
-	}
-
 	public List<string>AddServicesFromSto(string STO)
     {
 		var Command = new NpgsqlCommand(Functions.ServicesFromSto(STO), Connection);
@@ -164,5 +122,30 @@ public class Service : IService
 			services.Add(Reader.GetString(0));
 		}
 		return services;
+	}
+
+	public void InsertCarService(string Name, string Description)
+	{
+		OperationsWrapper.Execute(Functions.AddCarService(Name, Description), Connection);
+	}
+
+	public void InsertCarToService(int CarId, string CarService, string Service)
+	{
+		OperationsWrapper.Execute(Functions.AddCarToSto(CarId, CarService, Service), Connection);
+	}
+
+	public void InsertServiceToCS(string CarService, string Service)
+	{
+		OperationsWrapper.Execute(Functions.AddCsService(CarService, Service), Connection);
+	}
+
+	public void InsertCar(string Brand, int Year, DateTime Date)
+	{
+		OperationsWrapper.Execute(Functions.AddCar(Brand, Year, Date), Connection);
+	}
+
+	public void InsertService(string Name, string Description, double Price)
+	{
+		OperationsWrapper.Execute(Functions.AddService(Name, Description, Price), Connection);
 	}
 }

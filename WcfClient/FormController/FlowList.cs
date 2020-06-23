@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WcfClient.Connection;
 using WcfClient.Forms;
 using WcfClient.ServiceReference;
 
@@ -12,7 +13,7 @@ namespace WcfClient.DataOperations
     {
         public void StoList(MainForm form1)
         {
-            List<CarService> products = form1.service.GetAllCarServices().ToList();
+            List<CarService> products = ServiceConnection.Service.GetAllCarServices().ToList();
             form1.ItemsList.DataSource = products;
             form1.ItemsList.Columns["Id"].DisplayIndex = 0;
             form1.ItemsList.Columns["Name"].DisplayIndex = 1;
@@ -22,7 +23,7 @@ namespace WcfClient.DataOperations
 
         public void ServicesList(MainForm form1)
         {
-            List<ServiceData> services = form1.service.GetServiceData().ToList();
+            List<ServiceData> services = ServiceConnection.Service.GetServiceData().ToList();
             form1.ItemsList.DataSource = services;
             form1.ItemsList.Columns["Id"].DisplayIndex = 0;
             form1.ItemsList.Columns["Name"].DisplayIndex = 1;
@@ -33,7 +34,7 @@ namespace WcfClient.DataOperations
 
         public void CarsList(MainForm form1)
         {
-            List<Car> cars = form1.service.GetAllCars().ToList();
+            List<Car> cars = ServiceConnection.Service.GetAllCars().ToList();
             form1.ItemsList.DataSource = cars;
             form1.ItemsList.Columns["Id"].DisplayIndex = 0;
             form1.ItemsList.Columns["Brand"].DisplayIndex = 1;
@@ -44,7 +45,7 @@ namespace WcfClient.DataOperations
 
         public void StoInfoList(AboutSTO aboutSTO)
         {
-            List<CarsFromSto> products = aboutSTO.service.GetCarsFromSto(aboutSTO.Sto).ToList();
+            List<CarsFromSto> products = ServiceConnection.Service.GetCarsFromSto(aboutSTO.Sto).ToList();
             aboutSTO.ServicesList.DataSource = products;
             aboutSTO.ServicesList.Columns["Brand"].DisplayIndex = 0;
             aboutSTO.ServicesList.Columns["Year"].DisplayIndex = 1;
@@ -54,7 +55,7 @@ namespace WcfClient.DataOperations
 
         public void CommonInfoList(CommonInfo commonInfo)
         {
-            List<CommonInformation> info = commonInfo.service.GetCommonInfo(commonInfo.First.Value, commonInfo.Second.Value).ToList();
+            List<CommonInformation> info = ServiceConnection.Service.GetCommonInfo(commonInfo.First.Value, commonInfo.Second.Value).ToList();
             commonInfo.ServicesList.DataSource = info;
             commonInfo.ServicesList.Columns["STO"].DisplayIndex = 0;
             commonInfo.ServicesList.Columns["CountOfServices"].DisplayIndex = 1;

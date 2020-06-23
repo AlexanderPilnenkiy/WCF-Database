@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WcfClient.Connection;
 using WcfClient.FormController;
 using WcfClient.ServiceReference;
 
@@ -35,8 +36,7 @@ namespace WcfClient.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ServiceClient service = new ServiceClient();
-            service.InsertServiceToCS(cbSTO.Text, cbServices.Text);
+            ServiceConnection.Service.InsertServiceToCS(cbSTO.Text, cbServices.Text);
             Close();
         }
 

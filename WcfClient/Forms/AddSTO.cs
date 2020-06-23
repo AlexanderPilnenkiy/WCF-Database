@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WcfClient.Connection;
 using WcfClient.DataOperations;
 using WcfClient.ServiceReference;
 
@@ -29,8 +30,7 @@ namespace WcfClient.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ServiceClient service = new ServiceClient();
-            service.InsertCarService(Name.Text, Description.Text);
+            ServiceConnection.Service.InsertCarService(Name.Text, Description.Text);
             FlowList flowList = new FlowList();
             flowList.StoList(_mainForm);
             Close();

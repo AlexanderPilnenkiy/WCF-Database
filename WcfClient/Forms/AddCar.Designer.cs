@@ -132,7 +132,6 @@
             this.Controls.Add(this.button1);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddCar";
-            this.Load += new System.EventHandler(this.AddCar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Year)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

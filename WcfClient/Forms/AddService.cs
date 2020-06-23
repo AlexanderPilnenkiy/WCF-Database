@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WcfClient.Connection;
 using WcfClient.DataOperations;
 using WcfClient.ServiceReference;
 
@@ -24,8 +25,7 @@ namespace WcfClient.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ServiceClient service = new ServiceClient();
-            service.InsertService(Name.Text, Description.Text, Convert.ToDouble(Price.Value));
+            ServiceConnection.Service.InsertService(Name.Text, Description.Text, Convert.ToDouble(Price.Value));
             FlowList flowList = new FlowList();
             flowList.ServicesList(_mainForm);
             Close();

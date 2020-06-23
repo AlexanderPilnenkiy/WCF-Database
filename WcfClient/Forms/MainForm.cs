@@ -16,7 +16,6 @@ namespace WcfClient
 {
     public partial class MainForm : Form
     {
-        public ServiceClient service = new ServiceClient();
         public int CurrentList;
         FlowList flowList = new FlowList();
 

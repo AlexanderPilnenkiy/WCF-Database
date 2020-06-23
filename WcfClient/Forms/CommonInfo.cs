@@ -14,7 +14,6 @@ namespace WcfClient.Forms
 {
     public partial class CommonInfo : Form
     {
-        public ServiceClient service = new ServiceClient();
         FlowList flowList = new FlowList();
 
         public CommonInfo()

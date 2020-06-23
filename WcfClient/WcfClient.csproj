@@ -53,6 +53,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connection\ServiceConnection.cs" />
     <Compile Include="FormController\Context.cs" />
     <Compile Include="FormController\FlowComboBox.cs" />
     <Compile Include="FormController\FlowList.cs" />
