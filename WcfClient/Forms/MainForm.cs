@@ -64,5 +64,11 @@ namespace WcfClient
             AddService add = new AddService(this);
             add.Show();
         }
+
+        private void добавитьАвтомобильToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddCar addCar = new AddCar(this);
+            addCar.Show();
+        }
     }
 }

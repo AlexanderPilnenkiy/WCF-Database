@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:53448/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/" />
+  <xs:import schemaLocation="http://localhost:53448/Service.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
   <xs:element name="GetAllCarServices">
     <xs:complexType>
       <xs:sequence />
@@ -39,18 +40,6 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="DeleteCarService">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="CarService" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="DeleteCarServiceResponse">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
   <xs:element name="GetAllCars">
     <xs:complexType>
       <xs:sequence />
@@ -63,26 +52,44 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="InsertCar">
+  <xs:element name="AddServicesFromSto">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="car" nillable="true" type="q3:Car" />
+        <xs:element minOccurs="0" name="STO" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="InsertCarResponse">
+  <xs:element name="AddServicesFromStoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AddServicesFromStoResult" nillable="true" type="q3:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertCarToService">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CarId" type="xs:int" />
+        <xs:element minOccurs="0" name="CarService" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Service" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertCarToServiceResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="DeleteCar">
+  <xs:element name="InsertCar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="Car" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Brand" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Year" type="xs:int" />
+        <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="DeleteCarResponse">
+  <xs:element name="InsertCarResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
@@ -99,6 +106,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetCarsFromSto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Sto" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCarsFromStoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetCarsFromStoResult" nillable="true" type="q5:ArrayOfCarsFromSto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="InsertService">
     <xs:complexType>
       <xs:sequence>
@@ -109,18 +130,6 @@
     </xs:complexType>
   </xs:element>
   <xs:element name="InsertServiceResponse">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="DeleteService">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="Service" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="DeleteServiceResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>

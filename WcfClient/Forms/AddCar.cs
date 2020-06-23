@@ -7,36 +7,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WcfClient.FormController;
+using WcfClient.DataOperations;
 using WcfClient.ServiceReference;
 
 namespace WcfClient.Forms
 {
-    public partial class AddServiceToSTO : Form
+    public partial class AddCar : Form
     {
-        string CurrentService { get; set; }
+        MainForm _mainForm { get; set; }
 
-        public AddServiceToSTO()
+        public AddCar(MainForm main)
         {
             InitializeComponent();
-            FlowComboBox flow = new FlowComboBox();
-            flow.cbCarServices(this);
+            _mainForm = main;
         }
 
-        public AddServiceToSTO(string currentService)
+        private void AddCar_Load(object sender, EventArgs e)
         {
-            InitializeComponent();
-            FlowComboBox flow = new FlowComboBox();
-            flow.cbCarServices(this);
-            CurrentService = currentService;
-            cbServices.Text = CurrentService;
-            cbServices.Enabled = false;
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             ServiceClient service = new ServiceClient();
-            service.InsertServiceToCS(cbSTO.Text, cbServices.Text);
+            service.InsertCar(Name.Text, Convert.ToInt32(Year.Value), Date.Value);
+            FlowList flowList = new FlowList();
+            flowList.CarsList(_mainForm);
             Close();
         }
 

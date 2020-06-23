@@ -20,23 +20,23 @@ public interface IService
 	void InsertServiceToCS(string CarService, string Service);
 
 	[OperationContract]
-	void DeleteCarService(string CarService);
-
-	[OperationContract]
 	List<Car> GetAllCars();
 
 	[OperationContract]
-	void InsertCar(Car car);
+	List<string> AddServicesFromSto(string STO);
 
 	[OperationContract]
-	void DeleteCar(string Car);
+	void InsertCarToService(int CarId, string CarService, string Service);
+
+	[OperationContract]
+	void InsertCar(string Brand, int Year, DateTime Date);
 
 	[OperationContract]
 	List<ServiceData> GetServiceData();
 
 	[OperationContract]
-	void InsertService(string Name, string Description, double Price);
+	List<CarsFromSto> GetCarsFromSto(string Sto);
 
 	[OperationContract]
-	void DeleteService(string Service);
+	void InsertService(string Name, string Description, double Price);
 }

@@ -142,6 +142,7 @@
             this.добавитьАвтомобильToolStripMenuItem.Name = "добавитьАвтомобильToolStripMenuItem";
             this.добавитьАвтомобильToolStripMenuItem.Size = new System.Drawing.Size(248, 26);
             this.добавитьАвтомобильToolStripMenuItem.Text = "Добавить автомобиль";
+            this.добавитьАвтомобильToolStripMenuItem.Click += new System.EventHandler(this.добавитьАвтомобильToolStripMenuItem_Click);
             // 
             // ItemsList
             // 

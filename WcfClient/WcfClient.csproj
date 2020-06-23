@@ -56,6 +56,12 @@
     <Compile Include="FormController\Context.cs" />
     <Compile Include="FormController\FlowComboBox.cs" />
     <Compile Include="FormController\FlowList.cs" />
+    <Compile Include="Forms\AddCar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddCar.Designer.cs">
+      <DependentUpon>AddCar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AddService.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,12 @@
     <Compile Include="Forms\AddSTO.Designer.cs">
       <DependentUpon>AddSTO.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AutoToSTO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AutoToSTO.Designer.cs">
+      <DependentUpon>AutoToSTO.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +94,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\AddCar.resx">
+      <DependentUpon>AddCar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddService.resx">
       <DependentUpon>AddService.cs</DependentUpon>
     </EmbeddedResource>
@@ -90,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddSTO.resx">
       <DependentUpon>AddSTO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AutoToSTO.resx">
+      <DependentUpon>AutoToSTO.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -113,10 +131,16 @@
     <None Include="Connected Services\ServiceReference\Service2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\ServiceReference\Service3.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\ServiceReference\WcfClient.ServiceReference.Car.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceReference\WcfClient.ServiceReference.CarService.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference\WcfClient.ServiceReference.CarsFromSto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceReference\WcfClient.ServiceReference.ServiceData.datasource">

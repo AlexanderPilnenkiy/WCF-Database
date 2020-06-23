@@ -276,6 +276,99 @@ namespace WcfClient.ServiceReference {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CarsFromSto", Namespace="http://schemas.datacontract.org/2004/07/")]
+    [System.SerializableAttribute()]
+    public partial class CarsFromSto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string BrandField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ServiceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int YearField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Brand {
+            get {
+                return this.BrandField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BrandField, value) != true)) {
+                    this.BrandField = value;
+                    this.RaisePropertyChanged("Brand");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Date {
+            get {
+                return this.DateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DateField, value) != true)) {
+                    this.DateField = value;
+                    this.RaisePropertyChanged("Date");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Service {
+            get {
+                return this.ServiceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ServiceField, value) != true)) {
+                    this.ServiceField = value;
+                    this.RaisePropertyChanged("Service");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Year {
+            get {
+                return this.YearField;
+            }
+            set {
+                if ((this.YearField.Equals(value) != true)) {
+                    this.YearField = value;
+                    this.RaisePropertyChanged("Year");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IService")]
     public interface IService {
@@ -298,29 +391,29 @@ namespace WcfClient.ServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/InsertServiceToCS", ReplyAction="http://tempuri.org/IService/InsertServiceToCSResponse")]
         System.Threading.Tasks.Task InsertServiceToCSAsync(string CarService, string Service);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/DeleteCarService", ReplyAction="http://tempuri.org/IService/DeleteCarServiceResponse")]
-        void DeleteCarService(string CarService);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/DeleteCarService", ReplyAction="http://tempuri.org/IService/DeleteCarServiceResponse")]
-        System.Threading.Tasks.Task DeleteCarServiceAsync(string CarService);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetAllCars", ReplyAction="http://tempuri.org/IService/GetAllCarsResponse")]
         WcfClient.ServiceReference.Car[] GetAllCars();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetAllCars", ReplyAction="http://tempuri.org/IService/GetAllCarsResponse")]
         System.Threading.Tasks.Task<WcfClient.ServiceReference.Car[]> GetAllCarsAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/InsertCar", ReplyAction="http://tempuri.org/IService/InsertCarResponse")]
-        void InsertCar(WcfClient.ServiceReference.Car car);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddServicesFromSto", ReplyAction="http://tempuri.org/IService/AddServicesFromStoResponse")]
+        string[] AddServicesFromSto(string STO);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddServicesFromSto", ReplyAction="http://tempuri.org/IService/AddServicesFromStoResponse")]
+        System.Threading.Tasks.Task<string[]> AddServicesFromStoAsync(string STO);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/InsertCarToService", ReplyAction="http://tempuri.org/IService/InsertCarToServiceResponse")]
+        void InsertCarToService(int CarId, string CarService, string Service);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/InsertCarToService", ReplyAction="http://tempuri.org/IService/InsertCarToServiceResponse")]
+        System.Threading.Tasks.Task InsertCarToServiceAsync(int CarId, string CarService, string Service);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/InsertCar", ReplyAction="http://tempuri.org/IService/InsertCarResponse")]
-        System.Threading.Tasks.Task InsertCarAsync(WcfClient.ServiceReference.Car car);
+        void InsertCar(string Brand, int Year, System.DateTime Date);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/DeleteCar", ReplyAction="http://tempuri.org/IService/DeleteCarResponse")]
-        void DeleteCar(string Car);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/DeleteCar", ReplyAction="http://tempuri.org/IService/DeleteCarResponse")]
-        System.Threading.Tasks.Task DeleteCarAsync(string Car);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/InsertCar", ReplyAction="http://tempuri.org/IService/InsertCarResponse")]
+        System.Threading.Tasks.Task InsertCarAsync(string Brand, int Year, System.DateTime Date);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetServiceData", ReplyAction="http://tempuri.org/IService/GetServiceDataResponse")]
         WcfClient.ServiceReference.ServiceData[] GetServiceData();
@@ -328,17 +421,17 @@ namespace WcfClient.ServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetServiceData", ReplyAction="http://tempuri.org/IService/GetServiceDataResponse")]
         System.Threading.Tasks.Task<WcfClient.ServiceReference.ServiceData[]> GetServiceDataAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetCarsFromSto", ReplyAction="http://tempuri.org/IService/GetCarsFromStoResponse")]
+        WcfClient.ServiceReference.CarsFromSto[] GetCarsFromSto(string Sto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetCarsFromSto", ReplyAction="http://tempuri.org/IService/GetCarsFromStoResponse")]
+        System.Threading.Tasks.Task<WcfClient.ServiceReference.CarsFromSto[]> GetCarsFromStoAsync(string Sto);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/InsertService", ReplyAction="http://tempuri.org/IService/InsertServiceResponse")]
         void InsertService(string Name, string Description, double Price);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/InsertService", ReplyAction="http://tempuri.org/IService/InsertServiceResponse")]
         System.Threading.Tasks.Task InsertServiceAsync(string Name, string Description, double Price);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/DeleteService", ReplyAction="http://tempuri.org/IService/DeleteServiceResponse")]
-        void DeleteService(string Service);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/DeleteService", ReplyAction="http://tempuri.org/IService/DeleteServiceResponse")]
-        System.Threading.Tasks.Task DeleteServiceAsync(string Service);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -392,14 +485,6 @@ namespace WcfClient.ServiceReference {
             return base.Channel.InsertServiceToCSAsync(CarService, Service);
         }
         
-        public void DeleteCarService(string CarService) {
-            base.Channel.DeleteCarService(CarService);
-        }
-        
-        public System.Threading.Tasks.Task DeleteCarServiceAsync(string CarService) {
-            return base.Channel.DeleteCarServiceAsync(CarService);
-        }
-        
         public WcfClient.ServiceReference.Car[] GetAllCars() {
             return base.Channel.GetAllCars();
         }
@@ -408,20 +493,28 @@ namespace WcfClient.ServiceReference {
             return base.Channel.GetAllCarsAsync();
         }
         
-        public void InsertCar(WcfClient.ServiceReference.Car car) {
-            base.Channel.InsertCar(car);
+        public string[] AddServicesFromSto(string STO) {
+            return base.Channel.AddServicesFromSto(STO);
         }
         
-        public System.Threading.Tasks.Task InsertCarAsync(WcfClient.ServiceReference.Car car) {
-            return base.Channel.InsertCarAsync(car);
+        public System.Threading.Tasks.Task<string[]> AddServicesFromStoAsync(string STO) {
+            return base.Channel.AddServicesFromStoAsync(STO);
         }
         
-        public void DeleteCar(string Car) {
-            base.Channel.DeleteCar(Car);
+        public void InsertCarToService(int CarId, string CarService, string Service) {
+            base.Channel.InsertCarToService(CarId, CarService, Service);
         }
         
-        public System.Threading.Tasks.Task DeleteCarAsync(string Car) {
-            return base.Channel.DeleteCarAsync(Car);
+        public System.Threading.Tasks.Task InsertCarToServiceAsync(int CarId, string CarService, string Service) {
+            return base.Channel.InsertCarToServiceAsync(CarId, CarService, Service);
+        }
+        
+        public void InsertCar(string Brand, int Year, System.DateTime Date) {
+            base.Channel.InsertCar(Brand, Year, Date);
+        }
+        
+        public System.Threading.Tasks.Task InsertCarAsync(string Brand, int Year, System.DateTime Date) {
+            return base.Channel.InsertCarAsync(Brand, Year, Date);
         }
         
         public WcfClient.ServiceReference.ServiceData[] GetServiceData() {
@@ -432,20 +525,20 @@ namespace WcfClient.ServiceReference {
             return base.Channel.GetServiceDataAsync();
         }
         
+        public WcfClient.ServiceReference.CarsFromSto[] GetCarsFromSto(string Sto) {
+            return base.Channel.GetCarsFromSto(Sto);
+        }
+        
+        public System.Threading.Tasks.Task<WcfClient.ServiceReference.CarsFromSto[]> GetCarsFromStoAsync(string Sto) {
+            return base.Channel.GetCarsFromStoAsync(Sto);
+        }
+        
         public void InsertService(string Name, string Description, double Price) {
             base.Channel.InsertService(Name, Description, Price);
         }
         
         public System.Threading.Tasks.Task InsertServiceAsync(string Name, string Description, double Price) {
             return base.Channel.InsertServiceAsync(Name, Description, Price);
-        }
-        
-        public void DeleteService(string Service) {
-            base.Channel.DeleteService(Service);
-        }
-        
-        public System.Threading.Tasks.Task DeleteServiceAsync(string Service) {
-            return base.Channel.DeleteServiceAsync(Service);
         }
     }
 }

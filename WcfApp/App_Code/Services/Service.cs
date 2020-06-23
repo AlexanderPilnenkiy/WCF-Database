@@ -45,17 +45,20 @@ public class Service : IService
 		}
     }
 
+	public void InsertCarToService(int CarId, string CarService, string Service)
+    {
+		using (var command = new NpgsqlCommand(Functions.AddCarToSto(CarId, CarService, Service), Connection))
+		{
+			command.ExecuteNonQuery();
+		}
+	}
+
 	public void InsertServiceToCS(string CarService, string Service)
     {
 		using (var command = new NpgsqlCommand(Functions.AddCsService(CarService, Service), Connection))
 		{
 			command.ExecuteNonQuery();
 		}
-	}
-
-	public void DeleteCarService(string ServiceName)
-	{
-
 	}
 
 	public List<Car> GetAllCars()
@@ -77,14 +80,32 @@ public class Service : IService
 		return car;
 	}
 
-	public void InsertCar(Car carData)
-	{
+	public List<CarsFromSto> GetCarsFromSto(string Sto)
+    {
+		var Command = new NpgsqlCommand(Functions.GetCarsFromSto(Sto), Connection);
 
+		NpgsqlDataReader Reader = Command.ExecuteReader();
+		List<CarsFromSto> cars = new List<CarsFromSto>();
+		while (Reader.Read())
+		{
+			cars.Add(new CarsFromSto()
+			{
+				Brand = Reader.GetString(0),
+				Year = Reader.GetInt32(1),
+				Service = Reader.GetString(2),
+				Date = Reader.GetDateTime(3).ToShortDateString()
+			});
+		}
+		return cars;
 	}
 
-	public void DeleteCar(string Car)
-	{
 
+	public void InsertCar(string Brand, int Year, DateTime Date)
+	{
+		using (var command = new NpgsqlCommand(Functions.AddCar(Brand, Year, Date), Connection))
+		{
+			command.ExecuteNonQuery();
+		}
 	}
 
 	public List<ServiceData> GetServiceData()
@@ -114,8 +135,16 @@ public class Service : IService
 		}
 	}
 
-	public void DeleteService(string Service)
-	{
+	public List<string>AddServicesFromSto(string STO)
+    {
+		var Command = new NpgsqlCommand(Functions.ServicesFromSto(STO), Connection);
 
+		NpgsqlDataReader Reader = Command.ExecuteReader();
+		List<string> services = new List<string>();
+		while (Reader.Read())
+		{
+			services.Add(Reader.GetString(0));
+		}
+		return services;
 	}
 }

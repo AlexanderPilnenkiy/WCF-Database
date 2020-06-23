@@ -5,6 +5,7 @@
       <xsd:import schemaLocation="http://localhost:53448/Service.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:53448/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:53448/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/" />
+      <xsd:import schemaLocation="http://localhost:53448/Service.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IService_GetAllCarServices_InputMessage">
@@ -25,17 +26,23 @@
   <wsdl:message name="IService_InsertServiceToCS_OutputMessage">
     <wsdl:part name="parameters" element="tns:InsertServiceToCSResponse" />
   </wsdl:message>
-  <wsdl:message name="IService_DeleteCarService_InputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteCarService" />
-  </wsdl:message>
-  <wsdl:message name="IService_DeleteCarService_OutputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteCarServiceResponse" />
-  </wsdl:message>
   <wsdl:message name="IService_GetAllCars_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAllCars" />
   </wsdl:message>
   <wsdl:message name="IService_GetAllCars_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllCarsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddServicesFromSto_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddServicesFromSto" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddServicesFromSto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddServicesFromStoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_InsertCarToService_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCarToService" />
+  </wsdl:message>
+  <wsdl:message name="IService_InsertCarToService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCarToServiceResponse" />
   </wsdl:message>
   <wsdl:message name="IService_InsertCar_InputMessage">
     <wsdl:part name="parameters" element="tns:InsertCar" />
@@ -43,29 +50,23 @@
   <wsdl:message name="IService_InsertCar_OutputMessage">
     <wsdl:part name="parameters" element="tns:InsertCarResponse" />
   </wsdl:message>
-  <wsdl:message name="IService_DeleteCar_InputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteCar" />
-  </wsdl:message>
-  <wsdl:message name="IService_DeleteCar_OutputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteCarResponse" />
-  </wsdl:message>
   <wsdl:message name="IService_GetServiceData_InputMessage">
     <wsdl:part name="parameters" element="tns:GetServiceData" />
   </wsdl:message>
   <wsdl:message name="IService_GetServiceData_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetServiceDataResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_GetCarsFromSto_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCarsFromSto" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetCarsFromSto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCarsFromStoResponse" />
+  </wsdl:message>
   <wsdl:message name="IService_InsertService_InputMessage">
     <wsdl:part name="parameters" element="tns:InsertService" />
   </wsdl:message>
   <wsdl:message name="IService_InsertService_OutputMessage">
     <wsdl:part name="parameters" element="tns:InsertServiceResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_DeleteService_InputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteService" />
-  </wsdl:message>
-  <wsdl:message name="IService_DeleteService_OutputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteServiceResponse" />
   </wsdl:message>
   <wsdl:portType name="IService">
     <wsdl:operation name="GetAllCarServices">
@@ -80,33 +81,33 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService/InsertServiceToCS" message="tns:IService_InsertServiceToCS_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/InsertServiceToCSResponse" message="tns:IService_InsertServiceToCS_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="DeleteCarService">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/DeleteCarService" message="tns:IService_DeleteCarService_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/DeleteCarServiceResponse" message="tns:IService_DeleteCarService_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="GetAllCars">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/GetAllCars" message="tns:IService_GetAllCars_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/GetAllCarsResponse" message="tns:IService_GetAllCars_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddServicesFromSto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/AddServicesFromSto" message="tns:IService_AddServicesFromSto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/AddServicesFromStoResponse" message="tns:IService_AddServicesFromSto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCarToService">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/InsertCarToService" message="tns:IService_InsertCarToService_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/InsertCarToServiceResponse" message="tns:IService_InsertCarToService_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="InsertCar">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/InsertCar" message="tns:IService_InsertCar_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/InsertCarResponse" message="tns:IService_InsertCar_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="DeleteCar">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/DeleteCar" message="tns:IService_DeleteCar_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/DeleteCarResponse" message="tns:IService_DeleteCar_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="GetServiceData">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/GetServiceData" message="tns:IService_GetServiceData_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/GetServiceDataResponse" message="tns:IService_GetServiceData_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetCarsFromSto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetCarsFromSto" message="tns:IService_GetCarsFromSto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetCarsFromStoResponse" message="tns:IService_GetCarsFromSto_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="InsertService">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/InsertService" message="tns:IService_InsertService_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/InsertServiceResponse" message="tns:IService_InsertService_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="DeleteService">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/DeleteService" message="tns:IService_DeleteService_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/DeleteServiceResponse" message="tns:IService_DeleteService_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
@@ -138,8 +139,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="DeleteCarService">
-      <soap:operation soapAction="http://tempuri.org/IService/DeleteCarService" style="document" />
+    <wsdl:operation name="GetAllCars">
+      <soap:operation soapAction="http://tempuri.org/IService/GetAllCars" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -147,8 +148,17 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetAllCars">
-      <soap:operation soapAction="http://tempuri.org/IService/GetAllCars" style="document" />
+    <wsdl:operation name="AddServicesFromSto">
+      <soap:operation soapAction="http://tempuri.org/IService/AddServicesFromSto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCarToService">
+      <soap:operation soapAction="http://tempuri.org/IService/InsertCarToService" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -165,15 +175,6 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="DeleteCar">
-      <soap:operation soapAction="http://tempuri.org/IService/DeleteCar" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="GetServiceData">
       <soap:operation soapAction="http://tempuri.org/IService/GetServiceData" style="document" />
       <wsdl:input>
@@ -183,8 +184,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="InsertService">
-      <soap:operation soapAction="http://tempuri.org/IService/InsertService" style="document" />
+    <wsdl:operation name="GetCarsFromSto">
+      <soap:operation soapAction="http://tempuri.org/IService/GetCarsFromSto" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -192,8 +193,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="DeleteService">
-      <soap:operation soapAction="http://tempuri.org/IService/DeleteService" style="document" />
+    <wsdl:operation name="InsertService">
+      <soap:operation soapAction="http://tempuri.org/IService/InsertService" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
