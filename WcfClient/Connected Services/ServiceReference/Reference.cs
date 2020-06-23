@@ -329,10 +329,10 @@ namespace WcfClient.ServiceReference {
         System.Threading.Tasks.Task<WcfClient.ServiceReference.ServiceData[]> GetServiceDataAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/InsertService", ReplyAction="http://tempuri.org/IService/InsertServiceResponse")]
-        void InsertService(WcfClient.ServiceReference.ServiceData serviceData);
+        void InsertService(string Name, string Description, double Price);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/InsertService", ReplyAction="http://tempuri.org/IService/InsertServiceResponse")]
-        System.Threading.Tasks.Task InsertServiceAsync(WcfClient.ServiceReference.ServiceData serviceData);
+        System.Threading.Tasks.Task InsertServiceAsync(string Name, string Description, double Price);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/DeleteService", ReplyAction="http://tempuri.org/IService/DeleteServiceResponse")]
         void DeleteService(string Service);
@@ -432,12 +432,12 @@ namespace WcfClient.ServiceReference {
             return base.Channel.GetServiceDataAsync();
         }
         
-        public void InsertService(WcfClient.ServiceReference.ServiceData serviceData) {
-            base.Channel.InsertService(serviceData);
+        public void InsertService(string Name, string Description, double Price) {
+            base.Channel.InsertService(Name, Description, Price);
         }
         
-        public System.Threading.Tasks.Task InsertServiceAsync(WcfClient.ServiceReference.ServiceData serviceData) {
-            return base.Channel.InsertServiceAsync(serviceData);
+        public System.Threading.Tasks.Task InsertServiceAsync(string Name, string Description, double Price) {
+            return base.Channel.InsertServiceAsync(Name, Description, Price);
         }
         
         public void DeleteService(string Service) {

@@ -106,9 +106,12 @@ public class Service : IService
 		return services;
 	}
 
-	public void InsertService(ServiceData serviceData)
+	public void InsertService(string Name, string Description, double Price)
 	{
-
+		using (var command = new NpgsqlCommand(Functions.AddService(Name, Description, Price), Connection))
+		{
+			command.ExecuteNonQuery();
+		}
 	}
 
 	public void DeleteService(string Service)

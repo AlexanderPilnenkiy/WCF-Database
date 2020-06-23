@@ -102,7 +102,9 @@
   <xs:element name="InsertService">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="serviceData" nillable="true" type="q5:ServiceData" />
+        <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Price" type="xs:double" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

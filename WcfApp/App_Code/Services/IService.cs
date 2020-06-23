@@ -35,7 +35,7 @@ public interface IService
 	List<ServiceData> GetServiceData();
 
 	[OperationContract]
-	void InsertService(ServiceData serviceData);
+	void InsertService(string Name, string Description, double Price);
 
 	[OperationContract]
 	void DeleteService(string Service);

@@ -14,4 +14,9 @@ public class Functions
     {
         return "select * from add_cs_service('" + CarService + "', '" + Service + "')";
     }
+
+    public static string AddService(string Service, string Description, double Price)
+    {
+        return "select * from add_service('" + Service + "', '" + Description + "', '" + Price + "')";
+    }
 }

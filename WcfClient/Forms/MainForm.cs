@@ -58,5 +58,11 @@ namespace WcfClient
             AddServiceToSTO addService = new AddServiceToSTO();
             addService.Show();
         }
+
+        private void добавитьУслугуToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddService add = new AddService(this);
+            add.Show();
+        }
     }
 }

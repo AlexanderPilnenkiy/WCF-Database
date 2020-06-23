@@ -119,6 +119,7 @@
             this.добавитьУслугуToolStripMenuItem.Name = "добавитьУслугуToolStripMenuItem";
             this.добавитьУслугуToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.добавитьУслугуToolStripMenuItem.Text = "Добавить услугу";
+            this.добавитьУслугуToolStripMenuItem.Click += new System.EventHandler(this.добавитьУслугуToolStripMenuItem_Click);
             // 
             // автомобилиToolStripMenuItem
             // 
